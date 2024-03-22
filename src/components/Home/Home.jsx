@@ -72,13 +72,6 @@ function Home() {
         ], // Updated labels
         datasets: [
           {
-            label: "No. of Trucks Entered",
-            data: [10, 20, 30, 40], // Updated data for trucks entered
-            backgroundColor: "rgba(54, 162, 235, 0.5)",
-            borderColor: "rgba(54, 162, 235, 1)",
-            borderWidth: 1,
-          },
-          {
             label: "Coal Received",
             data: [100, 200, 150, 300], // Updated data for coal received
             backgroundColor: "rgba(255, 99, 132, 0.5)",
@@ -106,12 +99,15 @@ function Home() {
           y: {
             beginAtZero: true,
             ticks: {
-              color: "black", // Set text color to black
+              callback: function (value, index, values) {
+                return value + " tonnes";
+              },
+              color: "black",
             },
           },
           x: {
             ticks: {
-              color: "black", // Set text color to black
+              color: "black",
             },
           },
         },
@@ -181,7 +177,7 @@ function Home() {
           <FontAwesomeIcon icon={faUserCircle} className="ms-3" size="lg" />
         </div>
         <div className="d-flex flex-column justify-content-start mt-3">
-          <div className="card p-3 mb-3" style={{ width: "50%" }}>
+          <div className="card p-3 mb-3" style={{ width: "49.5%" }}>
             <label className="fw-bold">Company:</label>
             <select className="form-select w-100">
               <option value="Vikram Pvt Ltd">Vikram Pvt Ltd</option>
@@ -199,12 +195,12 @@ function Home() {
           </div>
 
           <div className="d-flex justify-content-between mb-3">
-            <div className="card p-3" style={{ width: "49%" }}>
+            <div className="card p-3" style={{ width: "49.5%" }}>
               <div className="chart-container" style={{ height: "300px" }}>
                 <canvas id="barGraph"></canvas>
               </div>
             </div>
-            <div className="card p-3" style={{ width: "49%" }}>
+            <div className="card p-3" style={{ width: "49.5%" }}>
               <div className="chart-container" style={{ marginBottom: "20px" }}>
                 <canvas id="pieChart"></canvas>
               </div>

@@ -1,6 +1,9 @@
+// Login.jsx
+
 import React, { useState } from "react";
-import truckImage from "../../assets/truck-image.png";
 import { useNavigate } from "react-router-dom";
+import truckImage from "../../assets/truck-image.png";
+import truckImage2 from "../../assets/truck-2.png";
 import "./Login.css";
 
 const Login = () => {

@@ -120,7 +120,3 @@ label {
 .location-icon:hover {
   transform: translateY(-5px);
 }
-
-.dropdown-sm {
-  max-width: 510px;
-}
