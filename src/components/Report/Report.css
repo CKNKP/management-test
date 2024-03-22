@@ -1,0 +1,85 @@
+/* Report.css */
+
+/* Wrapper for the Report component */
+.report-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+
+/* Container for the report */
+.report-container {
+  /* Light gray background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Center the content vertically and horizontally */
+.report-container .text-center {
+  margin-bottom: 20px;
+}
+
+/* Report.css */
+
+/* Container for the report */
+.report-container {
+  /* Light gray background */
+
+  border-radius: 10px;
+  /* border: 2px solid #333;  */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for a better visual effect */
+}
+
+/* Style for report items */
+.report-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for report item icons */
+.report-item-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #333;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.report-item-icon svg {
+  color: #333;
+}
+
+/* Hover effect for report icons */
+.report-item:hover .report-item-icon {
+  transform: translateY(-5px);
+}
+
+/* Style for bottom buttons */
+.report-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.report-button:hover {
+  transform: scale(1.1);
+}
+
+/* Adjust the width and alignment of the chart container */
+#barGraphContainer {
+  width: 50%; /* Adjust the width as needed */
+  float: left;
+}
+
+.fixed-bottom {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  width: 100%;
+}

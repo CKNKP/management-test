@@ -1,0 +1,126 @@
+/* Home.css */
+
+/* Header Styling */
+.text-center h2 {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Icons Styling */
+.fa-search,
+.fa-bell,
+.fa-user-circle,
+.report-icon,
+.camera-icon,
+.transaction-icon,
+.location-icon,
+.entry-icon,
+.fixed-bottom .fa-home,
+.fixed-bottom .fa-backward,
+.fixed-bottom .fa-power-off {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fa-search:hover,
+.fa-bell:hover,
+.fa-user-circle:hover,
+.report-icon:hover,
+.camera-icon:hover,
+.transaction-icon:hover,
+.location-icon:hover,
+.entry-icon:hover,
+.fixed-bottom .fa-home:hover,
+.fixed-bottom .fa-backward:hover,
+.fixed-bottom .fa-power-off:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Notification Popup Styling */
+.notification-popup {
+  position: absolute;
+  top: calc(10% + 10px);
+  right: 0;
+  z-index: 1000;
+  background-color: rgb(253, 253, 253);
+  color: #333;
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.notification-popup ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.notification-popup ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.notification-popup ul li:last-child {
+  border-bottom: none;
+}
+
+/* Form Styling */
+label {
+  font-weight: bold;
+}
+
+.form-select-sm,
+.smaller-textarea {
+  max-width: 100%;
+}
+
+/* Bottom Buttons Styling */
+.button-bottom {
+  padding: 10px;
+  /* border-top: 1px solid #ccc; */
+  width: 100%;
+}
+
+.icon-button {
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Keep other styles for icon buttons */
+.icon-button:hover {
+  transform: scale(1.1);
+}
+/* Additional Spacing */
+.mt-3 {
+  margin-top: 15px;
+}
+
+/* Customizing Report Icon */
+.report-icon,
+.camera-icon,
+.transaction-icon,
+.entry-icon,
+.location-icon {
+  border: 2px solid #333;
+  border-radius: 50%;
+  padding: 20px;
+  background-color: #f0f0f0;
+  transition: transform 0.3s ease;
+}
+
+.report-icon:hover,
+.camera-icon:hover,
+.transaction-icon:hover,
+.entry-icon:hover,
+.location-icon:hover {
+  transform: translateY(-5px);
+}
+
+.dropdown-sm {
+  max-width: 510px;
+}
