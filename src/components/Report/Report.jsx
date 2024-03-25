@@ -35,6 +35,14 @@ function Report() {
     navigate("/weeklyreport");
   };
 
+  const handleMonthlyReport = () => {
+    navigate("/monthlyreport");
+  };
+
+  const handleCustomizedReport = () => {
+    navigate("/customizedreport");
+  };
+
   return (
     <>
       <div className="text-center mt-3">
@@ -84,6 +92,7 @@ function Report() {
                     icon={faCalendar}
                     size="1x"
                     className="report-icon"
+                    onClick={handleMonthlyReport}
                   />
                 </div>
                 <span className="mt-2">Monthly Report</span>
@@ -97,30 +106,27 @@ function Report() {
                     icon={faUsers}
                     size="1x"
                     className="report-icon"
+                    onClick={handleCustomizedReport}
                   />
                 </div>
                 <span className="mt-2">Customized Report</span>
               </div>
             </div>
           </div>
-          <div className="fixed-bottom mb-3 d-flex justify-content-center gap-5">
-            <button className="report-button" onClick={handlehome}>
-              <FontAwesomeIcon icon={faHome} size="lg" />
-              <span className="ms-1">Home</span>
-            </button>
-            <button className="report-button" onClick={handleback}>
-              <FontAwesomeIcon icon={faBackward} size="lg" />
-              <span className="ms-1">Back</span>
-            </button>
-            <button className="report-button">
-              <FontAwesomeIcon
-                icon={faPowerOff}
-                size="lg"
-                onClick={handleSignOut}
-              />
-              <span className="ms-1">Sign Out</span>
-            </button>
-          </div>
+        </div>
+        <div className="mt-5 mb-3 d-flex justify-content-center gap-5 button-container">
+          <button className="icon-button" onClick={handlehome}>
+            <FontAwesomeIcon icon={faHome} size="lg" />
+            <span className="ms-1">Home</span>
+          </button>
+          <button className="icon-button" onClick={handleback}>
+            <FontAwesomeIcon icon={faBackward} size="lg" />
+            <span className="ms-1">Back</span>
+          </button>
+          <button className="icon-button" onClick={handleSignOut}>
+            <FontAwesomeIcon icon={faPowerOff} size="lg" />
+            <span className="ms-1">Sign Out</span>
+          </button>
         </div>
       </div>
     </>

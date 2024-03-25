@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import "./DailyReport.css";
 import * as XLSX from "xlsx";
@@ -11,35 +11,33 @@ import {
   faPowerOff,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Function to compute tableData based on currentItems
-function computeTableData(items) {
-  return items.map((item) => ({
-    date: item.date,
-    ticketNo: item.ticketNo,
-    truckNo: item.truckNo,
-    product: item.product,
-    poNo: item.poNo,
-    tpNo: item.tpNo,
-    grossWt: item.grossWt,
-    tareWt: item.tareWt,
-    netWt: item.netWt,
-  }));
-}
+// function computeTableData(items) {
+//   return items.map((item) => ({
+//     date: item.date,
+//     ticketNo: item.ticketNo,
+//     truckNo: item.truckNo,
+//     product: item.product,
+//     poNo: item.poNo,
+//     tpNo: item.tpNo,
+//     grossWt: item.grossWt,
+//     tareWt: item.tareWt,
+//     netWt: item.netWt,
+//   }));
+// }
 
-// Custom comparison function to deep compare two arrays
-function arrayEquality(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    for (let key in arr1[i]) {
-      if (arr1[i][key] !== arr2[i][key]) {
-        return false;
-      }
-    }
-  }
-  return true;
-}
+// function arrayEquality(arr1, arr2) {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   }
+//   for (let i = 0; i < arr1.length; i++) {
+//     for (let key in arr1[i]) {
+//       if (arr1[i][key] !== arr2[i][key]) {
+//         return false;
+//       }
+//     }
+//   }
+//   return true;
+// }
 
 function DailyReport() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -212,13 +210,13 @@ function DailyReport() {
     setCurrentPage(selected);
   };
 
-  const tableData = useMemo(
-    () => computeTableData(currentItems),
-    [currentItems]
-  );
+  // const tableData = useMemo(
+  //   () => computeTableData(currentItems),
+  //   [currentItems]
+  // );
 
   const handleDownload = () => {
-    const ws = XLSX.utils.json_to_sheet(tableData);
+    const ws = XLSX.utils.json_to_sheet(filteredData);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, "DailyReport");
     XLSX.writeFile(wb, "daily_report.xlsx");
@@ -299,7 +297,7 @@ function DailyReport() {
         </button>
       </div>
 
-      <div className="fixed-bottom mb-3 d-flex justify-content-center gap-5">
+      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 button-container vh-70">
         <button className="icon-button" onClick={handlehome}>
           <FontAwesomeIcon icon={faHome} size="lg" />
           <span className="ms-1">Home</span>

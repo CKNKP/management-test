@@ -71,6 +71,7 @@
 /* Form Styling */
 label {
   font-weight: bold;
+  max-width: fit-content;
 }
 
 .form-select-sm,

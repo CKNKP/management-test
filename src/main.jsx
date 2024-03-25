@@ -15,16 +15,22 @@ import Login from "./components/Login/Login.jsx";
 import Camera from "./components/Camera/Camera.jsx";
 import DailyReport from "./components/Report/DailyReport.jsx";
 import WeeklyReport from "./components/Report/WeeklyReport.jsx";
+import MonthlyReport from "./components/Report/MonthlyReport.jsx";
+import CustomizedReport from "./components/Report/CutomizedReport.jsx";
+import Home2 from "./components/Home/Home2.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
+      <Route path="/" element={<Login />} />
       <Route path="/home" element={<Home />} />
       <Route path="/report" element={<Report />} />
-      <Route path="/" element={<Login />} />
       <Route path="/camera" element={<Camera />} />
       <Route path="/dailyreport" element={<DailyReport />} />
       <Route path="/weeklyreport" element={<WeeklyReport />} />
+      <Route path="/monthlyreport" element={<MonthlyReport />} />
+      <Route path="/customizedreport" element={<CustomizedReport />} />
+      <Route path="/home2" element={<Home2 />} />
     </Route>
   )
 );
