@@ -14,11 +14,16 @@ import {
   faTruck,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Home() {
   const chartRef = useRef(null);
   const chartRef2 = useRef(null);
+  const [showNotification, setShowNotification] = useState(false);
+
+  const toggleNotification = () => {
+    setShowNotification(!showNotification);
+  };
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
@@ -52,9 +57,19 @@ function Home() {
             />
             <FontAwesomeIcon
               icon={faBell}
+              onClick={toggleNotification}
               className="header-icon mx-2"
               style={{ fontSize: "1.2rem" }}
             />
+            {showNotification && (
+              <div className="notification-popup mt-3">
+                <ul>
+                  <li>Dummy Notification 1</li>
+                  <li>Dummy Notification 2</li>
+                  <li>Dummy Notification 3</li>
+                </ul>
+              </div>
+            )}
             <FontAwesomeIcon
               icon={faUserCircle}
               className="header-icon mx-2"

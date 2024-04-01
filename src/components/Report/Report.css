@@ -104,7 +104,6 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Notification Popup Styling */
 .notification-popup {
   position: absolute;
   top: calc(10% + 10px);
