@@ -17,7 +17,7 @@ import DailyReport from "./components/Report/DailyReport.jsx";
 import WeeklyReport from "./components/Report/WeeklyReport.jsx";
 import MonthlyReport from "./components/Report/MonthlyReport.jsx";
 import CustomizedReport from "./components/Report/CutomizedReport.jsx";
-import Home2 from "./components/Home/Home2.jsx";
+import Transaction from "./components/Transaction/Transaction.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +30,7 @@ const router = createBrowserRouter(
       <Route path="/weeklyreport" element={<WeeklyReport />} />
       <Route path="/monthlyreport" element={<MonthlyReport />} />
       <Route path="/customizedreport" element={<CustomizedReport />} />
-      <Route path="/home2" element={<Home2 />} />
+      <Route path="/transaction" element={<Transaction />} />
     </Route>
   )
 );

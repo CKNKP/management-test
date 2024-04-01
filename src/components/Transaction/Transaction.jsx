@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
-import "./DailyReport.css";
 import * as XLSX from "xlsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +38,7 @@ import {
 //   return true;
 // }
 
-function DailyReport() {
+function Transaction() {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 10;
   const [selectedDate, setSelectedDate] = useState("");
@@ -226,7 +225,7 @@ function DailyReport() {
     <div>
       <div className="report-header d-flex justify-content-center">
         <h3 className="report-header-title text-center mt-3 d-flex justify-content-center align-items-center flex-wrap">
-          Daily Report
+          Live Transaction
         </h3>
       </div>
       <div className="daily-report-date d-flex align-items-center ml-3 mt-3">
@@ -317,4 +316,4 @@ function DailyReport() {
   );
 }
 
-export default DailyReport;
+export default Transaction;

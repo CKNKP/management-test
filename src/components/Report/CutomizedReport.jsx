@@ -107,8 +107,10 @@ function CustomizedReport() {
 
   return (
     <div>
-      <div className="container">
-        <h1 className="text-center mt-3">Customized Report</h1>
+      <div className="report-header d-flex justify-content-center">
+        <h3 className="report-header-title text-center mt-3 d-flex justify-content-center align-items-center flex-wrap">
+          Customized Report
+        </h3>
       </div>
       <div className="daily-report-date d-flex flex-column align-items-start ml-3 mt-3">
         <div className="mb-3">

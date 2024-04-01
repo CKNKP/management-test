@@ -1,123 +1,106 @@
-/* Home.css */
-
-/* Header Styling */
-.text-center h2 {
-  color: #333;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-/* Icons Styling */
-.fa-search,
-.fa-bell,
-.fa-user-circle,
-.report-icon,
-.camera-icon,
-.transaction-icon,
-.location-icon,
-.entry-icon,
-.fixed-bottom .fa-home,
-.fixed-bottom .fa-backward,
-.fixed-bottom .fa-power-off {
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.fa-search:hover,
-.fa-bell:hover,
-.fa-user-circle:hover,
-.report-icon:hover,
-.camera-icon:hover,
-.transaction-icon:hover,
-.location-icon:hover,
-.entry-icon:hover,
-.fixed-bottom .fa-home:hover,
-.fixed-bottom .fa-backward:hover,
-.fixed-bottom .fa-power-off:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Notification Popup Styling */
-.notification-popup {
-  position: absolute;
-  top: calc(10% + 10px);
-  right: 0;
+.home-header {
+  position: fixed;
+  width: 100%;
+  background-color: rgb(38, 40, 39);
+  color: white;
   z-index: 1000;
-  background-color: rgb(253, 253, 253);
-  color: #333;
-  padding: 10px;
-  margin-right: 5px;
-  border-radius: 5px;
+}
+
+.home-header-title {
+  background-color: rgb(38, 40, 39);
+}
+
+.home-logo-container-1 {
+  position: relative;
+  top: 100px;
+}
+
+.home-sidebar {
+  width: 60px;
+  background-color: rgb(38, 40, 39);
+  color: #fff;
+  padding: 20px 10px;
+  padding-top: 50px;
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  height: 100%;
+  transition: width 0.2s ease;
+  overflow: hidden;
+}
+.home-sidebar:hover {
   width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.notification-popup ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.notification-popup ul li {
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.notification-popup ul li:last-child {
-  border-bottom: none;
-}
-
-/* Form Styling */
-label {
-  font-weight: bold;
-  max-width: fit-content;
-}
-
-.form-select-sm,
-.smaller-textarea {
-  max-width: 100%;
-}
-
-/* Bottom Buttons Styling */
-.button-bottom {
+.sidebar-item {
+  display: flex;
+  margin-bottom: 40px;
+  height: 40px;
+  cursor: pointer;
   padding: 10px;
-  /* border-top: 1px solid #ccc; */
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+.sidebar-item:hover {
+  transform: scale(1.1); /* Increase the size of the element */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.sidebar-item-text {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #000;
+}
+.home-sidebar:hover .sidebar-item-text {
+  opacity: 1;
+}
+.sidebar-icon {
+  font-size: 1.2rem;
+  color: #000;
+}
+.home-label {
+  background-color: white;
+}
+.home-card {
+  max-width: 600px;
+}
+.chart-1 {
+  background-color: white;
+}
+.chart-2 {
+  background-color: white;
+}
+.home-chart-1 {
+  max-width: 600px;
+}
+
+.home-chart-2 {
+  max-width: 600px;
+}
+
+.home-main-content {
+  margin-left: 210px;
+  transition: margin-left 0.2s ease;
+  margin-top: 8rem;
+}
+
+.home-sidebar:not(:hover) + .home-main-content {
+  margin-left: 80px;
+}
+
+.card-group {
   width: 100%;
 }
 
-.icon-button {
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-/* Keep other styles for icon buttons */
-.icon-button:hover {
-  transform: scale(1.1);
-}
-/* Additional Spacing */
-.mt-3 {
-  margin-top: 15px;
-}
-
-/* Customizing Report Icon */
-.report-icon,
-.camera-icon,
-.transaction-icon,
-.entry-icon,
-.location-icon {
-  border: 2px solid #333;
-  border-radius: 50%;
-  padding: 20px;
-  background-color: #f0f0f0;
-  transition: transform 0.3s ease;
-}
-
-.report-icon:hover,
-.camera-icon:hover,
-.transaction-icon:hover,
-.entry-icon:hover,
-.location-icon:hover {
-  transform: translateY(-5px);
+.chart-name-1,
+.chart-name-2 {
+  background-color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
 }

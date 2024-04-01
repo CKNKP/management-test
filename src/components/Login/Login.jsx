@@ -21,9 +21,15 @@ const Login = () => {
       <div className="background-image"></div>
       <div className="login-container">
         <div className="login-content">
-          <h1 className="login-title">Weighbridge Management System</h1>
+          <h1 className="login-title" style={{ backgroundColor: "white" }}>
+            Weighbridge Management System
+          </h1>
           <img src={truckImage} alt="Truck" className="login-truck-image" />
-          <form onSubmit={handleSubmit} className="login-form">
+          <form
+            onSubmit={handleSubmit}
+            className="login-form"
+            style={{ backgroundColor: "white" }}
+          >
             <div className="form-group">
               <input
                 type="text"
@@ -45,7 +51,11 @@ const Login = () => {
             <button type="submit" className="btn btn-primary login-btn">
               Sign In
             </button>
-            <a href="#" className="login-forgot-password">
+            <a
+              href="#"
+              className="login-forgot-password"
+              style={{ backgroundColor: "white" }}
+            >
               Forgot Password?
             </a>
           </form>
