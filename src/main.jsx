@@ -18,6 +18,7 @@ import WeeklyReport from "./components/Report/WeeklyReport.jsx";
 import MonthlyReport from "./components/Report/MonthlyReport.jsx";
 import CustomizedReport from "./components/Report/CutomizedReport.jsx";
 import Transaction from "./components/Transaction/Transaction.jsx";
+import Location from "./components/Location/Location.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +31,8 @@ const router = createBrowserRouter(
       <Route path="/weeklyreport" element={<WeeklyReport />} />
       <Route path="/monthlyreport" element={<MonthlyReport />} />
       <Route path="/customizedreport" element={<CustomizedReport />} />
-      <Route path="/transaction" element={<Transaction />} />
+      <Route path="/live-transaction" element={<Transaction />} />
+      <Route path="/live-location" element={<Location />} />
     </Route>
   )
 );

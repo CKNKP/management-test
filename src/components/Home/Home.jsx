@@ -5,7 +5,7 @@ import { Bar } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 import {
   faSearch,
-  faBell,
+  faBellSlash,
   faUserCircle,
   faFileAlt,
   faVideo,
@@ -27,7 +27,7 @@ function Home() {
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
-      if (chartRef.current && chartRef2.current) {
+      if (chartRef.current?.chartInstance && chartRef2.current?.chartInstance) {
         chartRef.current.chartInstance.resize();
         chartRef2.current.chartInstance.resize();
       }
@@ -43,7 +43,7 @@ function Home() {
   return (
     <div className="home-page">
       <div className="home-header d-flex justify-content-center">
-        <h3 className="home-header-title text-4xl text-uppercase text-white mt-3 d-flex justify-content-center align-items-center flex-wrap">
+        <h3 className="home-header-title text-4xl text-center text-uppercase text-white mt-3 d-flex justify-content-center align-items-center flex-wrap">
           Weighbridge Management System
         </h3>
       </div>
@@ -56,7 +56,7 @@ function Home() {
               style={{ fontSize: "1.2rem" }}
             />
             <FontAwesomeIcon
-              icon={faBell}
+              icon={faBellSlash}
               onClick={toggleNotification}
               className="header-icon mx-2"
               style={{ fontSize: "1.2rem" }}
@@ -92,7 +92,7 @@ function Home() {
           <FontAwesomeIcon icon={faMapMarked} className="sidebar-icon" />
           <span className="sidebar-item-text">Live Location</span>
         </Link>
-        <Link to="/transaction" className="sidebar-item">
+        <Link to="/live-transaction" className="sidebar-item">
           <FontAwesomeIcon icon={faExchangeAlt} className="sidebar-icon" />
           <span className="sidebar-item-text">Live Transaction</span>
         </Link>
