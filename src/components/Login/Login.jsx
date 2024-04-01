@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import truckImage from "../../assets/truck-image.png";
-import truckImage2 from "../../assets/truck-2.png";
+// import truckImage from "../../assets/truck-image.png";
+// import truckImage2 from "../../assets/truck-2.png";
 import "./Login.css";
 
 const Login = () => {
@@ -18,13 +18,17 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      <div className="background-image"></div>
+      {/* <div className="background-image"></div> */}
       <div className="login-container">
         <div className="login-content">
           <h1 className="login-title" style={{ backgroundColor: "white" }}>
             Weighbridge Management System
           </h1>
-          <img src={truckImage} alt="Truck" className="login-truck-image" />
+          <img
+            src="https://www.seewise.ai/assets/img/landing/weighbridge.jpg"
+            alt="Truck"
+            className="login-truck-image"
+          />
           <form
             onSubmit={handleSubmit}
             className="login-form"

@@ -13,7 +13,7 @@ import {
 
 function WeeklyReport() {
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 5;
+  const itemsPerPage = 3;
   const [selectedStartDate, setSelectedStartDate] = useState("");
   const [selectedEndDate, setSelectedEndDate] = useState("");
   const [selectedWeek, setSelectedWeek] = useState("");
@@ -330,7 +330,7 @@ function WeeklyReport() {
         </button>
       </div>
 
-      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 button-container">
+      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 button-container fixed-bottom">
         <button className="icon-button" onClick={handlehome}>
           <FontAwesomeIcon icon={faHome} size="lg" />
           <span className="ms-1">Home</span>

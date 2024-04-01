@@ -121,7 +121,7 @@ function Report() {
             </div>
           </div>
         </div>
-        <div className="mb-3 d-flex justify-content-center gap-5 button-bottom">
+        <div className="mb-3 d-flex justify-content-center gap-5 button-bottom fixed-bottom">
           <button className="icon-button" onClick={handlehome}>
             <FontAwesomeIcon icon={faHome} size="lg" />
             <span className="ms-1">Home</span>

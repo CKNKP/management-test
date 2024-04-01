@@ -43,7 +43,7 @@ function Home() {
   return (
     <div className="home-page">
       <div className="home-header d-flex justify-content-center">
-        <h3 className="home-header-title text-center mt-3 d-flex justify-content-center align-items-center flex-wrap">
+        <h3 className="home-header-title text-4xl text-uppercase text-white mt-3 d-flex justify-content-center align-items-center flex-wrap">
           Weighbridge Management System
         </h3>
       </div>
@@ -67,6 +67,7 @@ function Home() {
                   <li>Dummy Notification 1</li>
                   <li>Dummy Notification 2</li>
                   <li>Dummy Notification 3</li>
+                  <li>Dummy Notification 4</li>
                 </ul>
               </div>
             )}
@@ -79,7 +80,7 @@ function Home() {
         </div>
       </div>
       <div className="home-sidebar d-flex flex-column text-center">
-        <Link to="/report" className="sidebar-item">
+        <Link to="/report" className="sidebar-item ">
           <FontAwesomeIcon icon={faFileAlt} className="sidebar-icon" />
           <span className="sidebar-item-text">Reports</span>
         </Link>

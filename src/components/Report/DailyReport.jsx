@@ -41,7 +41,7 @@ import {
 
 function DailyReport() {
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 10;
+  const itemsPerPage = 3;
   const [selectedDate, setSelectedDate] = useState("");
   const navigate = useNavigate();
 
@@ -299,7 +299,7 @@ function DailyReport() {
         </button>
       </div>
 
-      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 vh-70">
+      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 vh-70 fixed-bottom">
         <button className="icon-button" onClick={handlehome}>
           <FontAwesomeIcon icon={faHome} size="lg" />
           <span className="ms-1">Home</span>

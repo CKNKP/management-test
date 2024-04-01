@@ -228,7 +228,7 @@ function Transaction() {
           Live Transaction
         </h3>
       </div>
-      <div className="daily-report-date d-flex align-items-center ml-3 mt-3">
+      <div className="daily-report-date d-flex align-items-center ml-3 mt-3 ">
         <label htmlFor="date" className="mb-0 mr-3">
           &nbsp;Date:&nbsp;
         </label>
@@ -251,7 +251,7 @@ function Transaction() {
               <th scope="col">Product</th>
               <th scope="col">Po no.</th>
               <th scope="col">TP no.</th>
-              <th scope="col">Gross Wt.</th>
+              <th scope="col">Gross Wt./Time</th>
               <th scope="col">Tare Wt.</th>
               <th scope="col">Net Wt.</th>
             </tr>
@@ -298,7 +298,7 @@ function Transaction() {
         </button>
       </div>
 
-      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 vh-70">
+      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 vh-70 fixed-bottom">
         <button className="icon-button" onClick={handlehome}>
           <FontAwesomeIcon icon={faHome} size="lg" />
           <span className="ms-1">Home</span>

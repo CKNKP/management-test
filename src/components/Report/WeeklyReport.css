@@ -1,12 +1,12 @@
 .table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
   margin-top: 20px;
 }
 
 .table th {
-  background-color: rgb(48, 48, 48);
-  color: wheat;
+  background-color: rgb(194, 196, 203);
+  color: black;
   font-weight: bold;
   padding: 10px;
   border: 1px solid #ddd;
@@ -17,7 +17,7 @@
   padding: 10px;
   border: 1px solid #ddd;
   text-align: center;
-  /* min-width: 200px; */
+  min-width: 150px;
 }
 
 .table tbody tr:nth-child(even) {

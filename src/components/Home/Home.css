@@ -1,13 +1,14 @@
 .home-header {
   position: fixed;
   width: 100%;
-  background-color: rgb(38, 40, 39);
+  background-color: rgb(51, 65, 85);
   color: white;
   z-index: 1000;
 }
 
 .home-header-title {
-  background-color: rgb(38, 40, 39);
+  background-color: rgb(51, 65, 85);
+  font-weight: 400;
 }
 
 .home-logo-container-1 {
@@ -17,7 +18,7 @@
 
 .home-sidebar {
   width: 60px;
-  background-color: rgb(38, 40, 39);
+  background-color: rgb(30, 41, 59);
   color: #fff;
   padding: 20px 10px;
   padding-top: 50px;
@@ -91,10 +92,6 @@
 
 .home-sidebar:not(:hover) + .home-main-content {
   margin-left: 80px;
-}
-
-.card-group {
-  width: 100%;
 }
 
 .chart-name-1,

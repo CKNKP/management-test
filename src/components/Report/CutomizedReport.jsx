@@ -13,7 +13,7 @@ function CustomizedReport() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 5;
+  const itemsPerPage = 3;
 
   const navigate = useNavigate();
 
@@ -199,7 +199,7 @@ function CustomizedReport() {
         </button>
       </div>
 
-      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 button-container">
+      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 button-container fixed-bottom">
         <button className="icon-button" onClick={handlehome}>
           <FontAwesomeIcon icon={faHome} size="lg" />
           <span className="ms-1">Home</span>
