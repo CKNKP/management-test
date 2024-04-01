@@ -80,13 +80,9 @@ function Home() {
         </div>
       </div>
       <div className="home-sidebar d-flex flex-column text-center">
-        <Link to="/report" className="sidebar-item ">
-          <FontAwesomeIcon icon={faFileAlt} className="sidebar-icon" />
-          <span className="sidebar-item-text">Reports</span>
-        </Link>
-        <Link to="/camera" className="sidebar-item">
-          <FontAwesomeIcon icon={faVideo} className="sidebar-icon" />
-          <span className="sidebar-item-text">Camera</span>
+        <Link to="/vehicle-entry" className="sidebar-item">
+          <FontAwesomeIcon icon={faTruck} className="sidebar-icon" />
+          <span className="sidebar-item-text">Vehicle Entered</span>
         </Link>
         <Link to="/live-location" className="sidebar-item">
           <FontAwesomeIcon icon={faMapMarked} className="sidebar-icon" />
@@ -96,9 +92,13 @@ function Home() {
           <FontAwesomeIcon icon={faExchangeAlt} className="sidebar-icon" />
           <span className="sidebar-item-text">Live Transaction</span>
         </Link>
-        <Link to="/vehicle-entry" className="sidebar-item">
-          <FontAwesomeIcon icon={faTruck} className="sidebar-icon" />
-          <span className="sidebar-item-text">Vehicle Entry</span>
+        <Link to="/camera" className="sidebar-item">
+          <FontAwesomeIcon icon={faVideo} className="sidebar-icon" />
+          <span className="sidebar-item-text">Camera</span>
+        </Link>
+        <Link to="/report" className="sidebar-item">
+          <FontAwesomeIcon icon={faFileAlt} className="sidebar-icon rp-icon" />
+          <span className="sidebar-item-text">Reports</span>
         </Link>
         <Link to="/" className="sidebar-item">
           <FontAwesomeIcon icon={faSignOut} className="sidebar-icon" />

@@ -33,6 +33,11 @@
   width: 200px;
 }
 
+.rp-icon {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+}
+
 .sidebar-item {
   display: flex;
   margin-bottom: 40px;
