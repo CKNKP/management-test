@@ -229,6 +229,7 @@ function DailyReport() {
           Daily Report
         </h3>
       </div>
+
       <div className="daily-report-date d-flex align-items-center ml-3 mt-3">
         <label htmlFor="date" className="mb-0 mr-3">
           &nbsp;Date:&nbsp;

@@ -3,6 +3,8 @@ import ReactPaginate from "react-paginate";
 import * as XLSX from "xlsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
+import "./CustomizedReport.css";
+
 import {
   faHome,
   faBackward,
@@ -13,8 +15,8 @@ function CustomizedReport() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 3;
-
+  const itemsPerPage = 5;
+  const [status, setStatus] = useState("");
   const navigate = useNavigate();
 
   const handleSignOut = () => {
@@ -35,58 +37,99 @@ function CustomizedReport() {
         date: "2024-03-01",
         ticketNo: 1,
         truckNo: "00 02 Al 1860",
-        product: "Coal",
+        supplier: "MCL",
+        material: "",
+        product: "Sponge Iron",
         poNo: 120012,
         tpNo: "21T-11000000076981",
         grossWt: 3265,
         tareWt: 1936,
-        netWt: 1329,
+        chWt: 1336,
+        status: "Outbound",
       },
       {
         date: "2024-03-02",
         ticketNo: 2,
         truckNo: "00 14 OD 1334",
-        product: "Dolomite",
+        supplier: "MCL",
+
+        material: "",
+        product: "Sponge Iron",
+
         poNo: 16123456,
         tpNo: "21T-11000000076982",
         grossWt: 3265,
         tareWt: 1935,
-        netWt: 1330,
+        chWt: 1331,
+        status: "Outbound",
       },
       {
         date: "2024-03-03",
         ticketNo: 3,
         truckNo: "00 14 OD 1334",
-        product: "Iron Ore",
+        supplier: "MCL",
+
+        material: "",
+        product: "Sponge Iron",
+
         poNo: 16123456,
         tpNo: "21T-11000000076982",
         grossWt: 3265,
         tareWt: 1935,
-        netWt: 1330,
+        chWt: 1329,
+        status: "Outbound",
       },
       {
         date: "2024-04-04",
         ticketNo: 4,
         truckNo: "00 14 OD 1334",
-        product: "Bricks",
+        supplier: "MCL",
+
+        material: "Bricks",
+        product: "",
+
         poNo: 16123456,
         tpNo: "21T-11000000076982",
         grossWt: 3265,
         tareWt: 1935,
-        netWt: 1330,
+        chWt: 1330,
+        status: "Inbound",
+      },
+      {
+        date: "2024-04-04",
+        ticketNo: 5,
+        truckNo: "00 14 OD 1335",
+        supplier: "MCL",
+
+        material: "Bricks",
+        product: "",
+        poNo: 16123456,
+        tpNo: "21T-11000000076782",
+        grossWt: 3265,
+        tareWt: 1935,
+        chWt: 1332,
+        status: "Inbound",
       },
     ],
     []
   );
 
   const filteredData = useMemo(() => {
-    if (!startDate || !endDate) return data;
+    let filteredDataByDate = data;
 
-    return data.filter((item) => {
-      const itemDate = new Date(item.date);
-      return itemDate >= new Date(startDate) && itemDate <= new Date(endDate);
-    });
-  }, [data, startDate, endDate]);
+    if (startDate && endDate) {
+      filteredDataByDate = data.filter((item) => {
+        const itemDate = new Date(item.date);
+        return itemDate >= new Date(startDate) && itemDate <= new Date(endDate);
+      });
+    }
+
+    if (status) {
+      return filteredDataByDate.filter((item) => item.status === status);
+    }
+
+    return filteredDataByDate;
+  }, [data, startDate, endDate, status]);
 
   const offset = currentPage * itemsPerPage;
   const currentItems = filteredData.slice(offset, offset + itemsPerPage);
@@ -141,6 +184,23 @@ function CustomizedReport() {
             style={{ marginLeft: "5px" }}
           />
         </div>
+        <div>
+          <label htmlFor="status" className="mb-0 mr-3 mt-3">
+            &nbsp; Status:
+          </label>
+          <select
+            id="status"
+            name="status"
+            className="form-control"
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+            style={{ marginLeft: "5px" }}
+          >
+            <option value="">All</option>
+            <option value="Inbound">Inbound</option>
+            <option value="Outbound">Outbound</option>
+          </select>
+        </div>
       </div>
       <div className="dail-report-table table-responsive-xl table-responsive-md table-responsive-lg table-responsive-sm table-responsive-xxl mt-3">
         <table className="table table-bordered table-striped">
@@ -149,12 +209,17 @@ function CustomizedReport() {
               <th scope="col">Date</th>
               <th scope="col">Ticket no.</th>
               <th scope="col">Truck no.</th>
+              <th scope="col">Supplier</th>
+              <th scope="col">Material</th>
               <th scope="col">Product</th>
               <th scope="col">Po no.</th>
               <th scope="col">TP no.</th>
               <th scope="col">Gross Wt.</th>
               <th scope="col">Tare Wt.</th>
+              <th scope="col">Ch_Wt.</th>
               <th scope="col">Net Wt.</th>
+              <th scope="col">Excess</th>
+              <th scope="col">Status</th>
             </tr>
           </thead>
 
@@ -164,12 +229,17 @@ function CustomizedReport() {
                 <td>{item.date}</td>
                 <td>{item.ticketNo}</td>
                 <td>{item.truckNo}</td>
+                <td>{item.supplier}</td>
+                <td>{item.material}</td>
                 <td>{item.product}</td>
                 <td>{item.poNo}</td>
                 <td>{item.tpNo}</td>
                 <td>{item.grossWt}</td>
                 <td>{item.tareWt}</td>
-                <td>{item.netWt}</td>
+                <td>{item.chWt}</td>
+                <td>{item.grossWt - item.tareWt}</td>
+                <td>{item.grossWt - item.tareWt - item.chWt}</td>
+                <td>{item.status}</td>
               </tr>
             ))}
           </tbody>
@@ -193,13 +263,16 @@ function CustomizedReport() {
           breakLabel={null}
         />
       )}
-      <div className="text-center mt-3">
-        <button className="btn btn-primary" onClick={handleDownload}>
+      <div className="text-center mt-4">
+        <button
+          className="btn btn-primary download-btn"
+          onClick={handleDownload}
+        >
           Download Report
         </button>
       </div>
 
-      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 button-container fixed-bottom">
+      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 button-container">
         <button className="icon-button" onClick={handlehome}>
           <FontAwesomeIcon icon={faHome} size="lg" />
           <span className="ms-1">Home</span>

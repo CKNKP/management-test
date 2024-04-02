@@ -324,7 +324,7 @@ function WeeklyReport() {
           breakLabel={null}
         />
       )}
-      <div className="text-center mt-3">
+      <div className="text-center mt-4">
         <button className="btn btn-primary" onClick={handleDownload}>
           Download Report
         </button>
