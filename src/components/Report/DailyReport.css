@@ -1,3 +1,13 @@
 .daily-report-date {
   font-weight: bold;
 }
+
+.daily-report-main-content {
+  margin-left: 210px;
+  margin-top: 7rem;
+  transition: margin-left 0.2s ease;
+}
+
+.home-sidebar:not(:hover) + .daily-report-main-content {
+  margin-left: 80px;
+}

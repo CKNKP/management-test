@@ -1,5 +1,5 @@
 .report-header {
-  position: relative;
+  position: fixed;
   width: 100%;
   background-color: rgb(51, 65, 85);
   color: white;
