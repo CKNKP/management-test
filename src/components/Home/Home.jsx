@@ -43,9 +43,9 @@ function Home() {
   return (
     <div className="home-page">
       <div className="home-header d-flex justify-content-center">
-        <h3 className="home-header-title text-4xl text-center text-uppercase text-white mt-3 d-flex justify-content-center align-items-center flex-wrap">
+        <h2 className="home-header-title text-center text-uppercase mt-3 d-flex justify-content-center align-items-center flex-wrap">
           Weighbridge Management System
-        </h3>
+        </h2>
       </div>
       <div className="home-logo-container-1 container-fluid">
         <div className="row justify-content-end">

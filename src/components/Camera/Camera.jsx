@@ -40,9 +40,9 @@ function Camera() {
       <div className="camera-container">
         <div className="d-flex align-items-center justify-content-center">
           <div className="report-header d-flex justify-content-center">
-            <h3 className="report-header-title text-center mt-3 d-flex justify-content-center align-items-center flex-wrap">
+            <h2 className="report-header-title text-center mt-3 d-flex justify-content-center align-items-center flex-wrap">
               Camera Feed
-            </h3>
+            </h2>
             <FontAwesomeIcon
               icon={faCircle}
               className={`recording-icon ${isRecording ? "blink" : ""}`}

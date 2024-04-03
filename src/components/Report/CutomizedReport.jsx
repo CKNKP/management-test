@@ -20,7 +20,7 @@ function CustomizedReport() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 3;
+  const itemsPerPage = 5;
   const [status, setStatus] = useState("");
   const navigate = useNavigate();
 
@@ -107,6 +107,21 @@ function CustomizedReport() {
         chWt: 1332,
         status: "Inbound",
       },
+      {
+        date: "2024-04-05",
+        ticketNo: 6,
+        truckNo: "00 14 OD 1335",
+        supplier: "MCL",
+
+        material: "Dolomite",
+        product: "",
+        poNo: "",
+        tpNo: "21T-11000000076782",
+        grossWt: 3265,
+        tareWt: 1935,
+        chWt: 1332,
+        status: "Inbound",
+      },
     ],
     []
   );
@@ -149,9 +164,9 @@ function CustomizedReport() {
     <div>
       <div className="report-header d-flex justify-content-between align-items-center">
         <div></div>
-        <h3 className="report-header-title text-center mt-3">
+        <h2 className="report-header-title text-center mt-3">
           Customized Report
-        </h3>
+        </h2>
         <FontAwesomeIcon
           icon={faHome}
           className="daily_report_icon mt-2 "
@@ -216,7 +231,7 @@ function CustomizedReport() {
           </div>
           <div>
             <label htmlFor="status" className="mb-0 mr-3 mt-3">
-              &nbsp; Status:
+              &nbsp; Transactional status:
             </label>
             <select
               id="status"
@@ -240,10 +255,16 @@ function CustomizedReport() {
                 <th scope="col">Ticket no.</th>
                 <th scope="col">Truck no.</th>
                 <th scope="col">Supplier</th>
-                <th scope="col">Material</th>
-                <th scope="col">Product</th>
+                {(status !== "Outbound" || status === "") && (
+                  <th scope="col">Material</th>
+                )}
+                {(status !== "Inbound" || status === "") && (
+                  <th scope="col">Product</th>
+                )}
                 <th scope="col">Po no.</th>
-                <th scope="col">TP no.</th>
+                {(status !== "Outbound" || status === "") && (
+                  <th scope="col">TP no.</th>
+                )}
                 <th scope="col">Gross Wt.</th>
                 <th scope="col">Tare Wt.</th>
                 <th scope="col">Ch_Wt.</th>
@@ -260,10 +281,16 @@ function CustomizedReport() {
                   <td>{item.ticketNo}</td>
                   <td>{item.truckNo}</td>
                   <td>{item.supplier}</td>
-                  <td>{item.material}</td>
-                  <td>{item.product}</td>
+                  {(status !== "Outbound" || status === "") && (
+                    <td>{item.material}</td>
+                  )}
+                  {(status !== "Inbound" || status === "") && (
+                    <td>{item.product}</td>
+                  )}
                   <td>{item.poNo}</td>
-                  <td>{item.tpNo}</td>
+                  {(status !== "Outbound" || status === "") && (
+                    <td>{item.tpNo}</td>
+                  )}
                   <td>{item.grossWt}</td>
                   <td>{item.tareWt}</td>
                   <td>{item.chWt}</td>
@@ -293,7 +320,7 @@ function CustomizedReport() {
             breakLabel={null}
           />
         )}
-        <div className="text-center mt-1">
+        <div className="text-center btn-container">
           <button
             className="btn btn-primary download-btn"
             onClick={handleDownload}

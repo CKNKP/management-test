@@ -227,7 +227,7 @@ function DailyReport() {
     <div>
       <div className="report-header d-flex justify-content-between align-items-center">
         <div></div>
-        <h3 className="report-header-title text-center mt-3">Daily Report</h3>
+        <h2 className="report-header-title text-center mt-3">Daily Report</h2>
         <FontAwesomeIcon
           icon={faHome}
           className="daily_report_icon mt-2 "
