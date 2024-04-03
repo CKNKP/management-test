@@ -9,6 +9,7 @@
 .image-container {
   border: 1px solid black;
   overflow: hidden;
+  position: relative; /* Ensure camera name is positioned relative to the container */
 }
 
 .image {
@@ -23,6 +24,16 @@
   margin-left: 15px;
   padding-top: 27px;
   background-color: rgb(51, 65, 85);
+}
+
+.camera-name {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-weight: bolder;
 }
 
 @keyframes blink {

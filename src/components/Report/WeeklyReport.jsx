@@ -1,14 +1,20 @@
-import React, { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import ReactPaginate from "react-paginate";
 import "./WeeklyReport.css";
 import * as XLSX from "xlsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 
+import { Link } from "react-router-dom";
+
 import {
   faHome,
-  faBackward,
-  faPowerOff,
+  faFileAlt,
+  faVideo,
+  faMapMarked,
+  faExchangeAlt,
+  faTruck,
+  faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
 
 function WeeklyReport() {
@@ -20,16 +26,8 @@ function WeeklyReport() {
 
   const navigate = useNavigate();
 
-  const handleSignOut = () => {
-    navigate("/");
-  };
-
   const handlehome = () => {
     navigate("/home");
-  };
-
-  const handleback = () => {
-    navigate(-1);
   };
 
   const data = useMemo(
@@ -237,100 +235,134 @@ function WeeklyReport() {
 
   return (
     <div>
-      <div className="report-header d-flex justify-content-center">
-        <h3 className="report-header-title text-center mt-3 d-flex justify-content-center align-items-center flex-wrap">
-          Weekly Report
-        </h3>
-      </div>
-      <div className="daily-report-date d-flex flex-column align-items-start ml-3 mt-3">
-        <div className="mb-3">
-          <label htmlFor="startDate" className="mb-0 mr-3">
-            &nbsp;Start Date:
-          </label>
-          <input
-            type="date"
-            id="startDate"
-            name="startDate"
-            className="form-control"
-            value={selectedStartDate}
-            onChange={handleStartDateChange}
-            style={{ marginLeft: "5px" }}
-          />
-        </div>
-        <div>
-          <label htmlFor="endDate" className="mb-0 mr-3">
-            &nbsp; End Date:
-          </label>
-          <input
-            type="date"
-            id="endDate"
-            name="endDate"
-            className="form-control"
-            value={selectedEndDate}
-            onChange={handleEndDateChange}
-            style={{ marginLeft: "5px" }}
-          />
-        </div>
-      </div>
-      <div className="dail-report-table table-responsive-xl table-responsive-md table-responsive-lg table-responsive-sm table-responsive-xxl mt-3">
-        <table className="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th scope="col">Date</th>
-              <th scope="col">Ticket no.</th>
-              <th scope="col">Truck no.</th>
-              <th scope="col">Product</th>
-              <th scope="col">Po no.</th>
-              <th scope="col">TP no.</th>
-              <th scope="col">Gross Wt.</th>
-              <th scope="col">Tare Wt.</th>
-              <th scope="col">Net Wt.</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {currentItems.map((item, index) => (
-              <tr key={index}>
-                <td>{item.date}</td>
-                <td>{item.ticketNo}</td>
-                <td>{item.truckNo}</td>
-                <td>{item.product}</td>
-                <td>{item.poNo}</td>
-                <td>{item.tpNo}</td>
-                <td>{item.grossWt}</td>
-                <td>{item.tareWt}</td>
-                <td>{item.netWt}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      {pageCount > 1 && (
-        <ReactPaginate
-          previousLabel={"← Previous"}
-          nextLabel={"Next →"}
-          pageCount={pageCount}
-          onPageChange={handlePageChange}
-          containerClassName={"pagination justify-content-center"}
-          previousLinkClassName={"page-link"}
-          nextLinkClassName={"page-link"}
-          disabledClassName={"disabled"}
-          activeClassName={"active"}
-          // Custom styling to hide the page count
-          pageClassName={"d-none"}
-          breakClassName={"d-none"}
-          pageLinkClassName={"d-none"}
-          marginPagesDisplayed={0}
-          breakLabel={null}
+      <div className="report-header d-flex justify-content-between align-items-center">
+        <div></div>
+        <h3 className="report-header-title text-center mt-3">Weekly Report</h3>
+        <FontAwesomeIcon
+          icon={faHome}
+          className="daily_report_icon mt-2 "
+          onClick={handlehome}
         />
-      )}
-      <div className="text-center mt-4">
-        <button className="btn btn-primary" onClick={handleDownload}>
-          Download Report
-        </button>
       </div>
+      <div className="home-sidebar d-flex flex-column text-center">
+        <Link to="/vehicle-entry" className="sidebar-item">
+          <FontAwesomeIcon icon={faTruck} className="sidebar-icon" />
+          <span className="sidebar-item-text">Vehicle Entered</span>
+        </Link>
+        <Link to="/live-location" className="sidebar-item">
+          <FontAwesomeIcon icon={faMapMarked} className="sidebar-icon" />
+          <span className="sidebar-item-text">Live Location</span>
+        </Link>
+        <Link to="/live-transaction" className="sidebar-item">
+          <FontAwesomeIcon icon={faExchangeAlt} className="sidebar-icon" />
+          <span className="sidebar-item-text">Live Transaction</span>
+        </Link>
+        <Link to="/camera" className="sidebar-item">
+          <FontAwesomeIcon icon={faVideo} className="sidebar-icon" />
+          <span className="sidebar-item-text">Camera</span>
+        </Link>
+        <Link to="/report" className="sidebar-item">
+          <FontAwesomeIcon icon={faFileAlt} className="sidebar-icon rp-icon" />
+          <span className="sidebar-item-text">Reports</span>
+        </Link>
+        <Link to="/" className="sidebar-item">
+          <FontAwesomeIcon icon={faSignOut} className="sidebar-icon" />
+          <span className="sidebar-item-text">Logout</span>
+        </Link>
+      </div>
+      <div className="daily-report-main-content">
+        <div className="daily-report-date d-flex flex-column align-items-start ml-3 mt-3">
+          <div className="mb-3">
+            <label htmlFor="startDate" className="mb-0 mr-3">
+              &nbsp;Start Date:
+            </label>
+            <input
+              type="date"
+              id="startDate"
+              name="startDate"
+              className="form-control"
+              value={selectedStartDate}
+              onChange={handleStartDateChange}
+              style={{ marginLeft: "5px" }}
+            />
+          </div>
+          <div>
+            <label htmlFor="endDate" className="mb-0 mr-3">
+              &nbsp; End Date:
+            </label>
+            <input
+              type="date"
+              id="endDate"
+              name="endDate"
+              className="form-control"
+              value={selectedEndDate}
+              onChange={handleEndDateChange}
+              style={{ marginLeft: "5px" }}
+            />
+          </div>
+        </div>
+        <div className="dail-report-table table-responsive-xl table-responsive-md table-responsive-lg table-responsive-sm table-responsive-xxl mt-3">
+          <table className="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Ticket no.</th>
+                <th scope="col">Truck no.</th>
+                <th scope="col">Product</th>
+                <th scope="col">Po no.</th>
+                <th scope="col">TP no.</th>
+                <th scope="col">Gross Wt.</th>
+                <th scope="col">Tare Wt.</th>
+                <th scope="col">Net Wt.</th>
+              </tr>
+            </thead>
 
-      <div className="mt-5 mb-3 d-flex justify-content-center gap-5 button-container fixed-bottom">
+            <tbody>
+              {currentItems.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.date}</td>
+                  <td>{item.ticketNo}</td>
+                  <td>{item.truckNo}</td>
+                  <td>{item.product}</td>
+                  <td>{item.poNo}</td>
+                  <td>{item.tpNo}</td>
+                  <td>{item.grossWt}</td>
+                  <td>{item.tareWt}</td>
+                  <td>{item.netWt}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {pageCount > 1 && (
+          <ReactPaginate
+            previousLabel={"← Previous"}
+            nextLabel={"Next →"}
+            pageCount={pageCount}
+            onPageChange={handlePageChange}
+            containerClassName={"pagination justify-content-center"}
+            previousLinkClassName={"page-link"}
+            nextLinkClassName={"page-link"}
+            disabledClassName={"disabled"}
+            activeClassName={"active"}
+            // Custom styling to hide the page count
+            pageClassName={"d-none"}
+            breakClassName={"d-none"}
+            pageLinkClassName={"d-none"}
+            marginPagesDisplayed={0}
+            breakLabel={null}
+          />
+        )}
+        <div className="text-center mt-1">
+          <button
+            className="btn btn-primary download-btn"
+            onClick={handleDownload}
+          >
+            Download Report
+          </button>
+        </div>
+
+        {/* <div className="mt-5 mb-3 d-flex justify-content-center gap-5 button-container fixed-bottom">
         <button className="icon-button" onClick={handlehome}>
           <FontAwesomeIcon icon={faHome} size="lg" />
           <span className="ms-1">Home</span>
@@ -343,6 +375,7 @@ function WeeklyReport() {
           <FontAwesomeIcon icon={faPowerOff} size="lg" />
           <span className="ms-1">Sign Out</span>
         </button>
+      </div> */}
       </div>
     </div>
   );

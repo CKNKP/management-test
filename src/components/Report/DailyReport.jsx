@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import {
+  faDownload,
   faHome,
   faBackward,
   faPowerOff,
@@ -52,17 +53,10 @@ function DailyReport() {
   const [selectedDate, setSelectedDate] = useState("");
   const navigate = useNavigate();
 
-  const handleSignOut = () => {
-    navigate("/");
-  };
-
   const handlehome = () => {
     navigate("/home");
   };
 
-  const handleback = () => {
-    navigate(-1);
-  };
   const data = [
     {
       date: "2024-03-01",
@@ -231,10 +225,14 @@ function DailyReport() {
 
   return (
     <div>
-      <div className="report-header d-flex justify-content-center">
-        <h3 className="report-header-title text-center mt-3 d-flex justify-content-center align-items-center flex-wrap">
-          Daily Report
-        </h3>
+      <div className="report-header d-flex justify-content-between align-items-center">
+        <div></div>
+        <h3 className="report-header-title text-center mt-3">Daily Report</h3>
+        <FontAwesomeIcon
+          icon={faHome}
+          className="daily_report_icon mt-2 "
+          onClick={handlehome}
+        />
       </div>
       <div className="home-sidebar d-flex flex-column text-center">
         <Link to="/vehicle-entry" className="sidebar-item">
@@ -274,6 +272,7 @@ function DailyReport() {
             className="form-control w-auto"
             value={selectedDate}
             onChange={handleDateChange}
+            max={getCurrentDate()}
           />
         </div>
         <div className="dail-report-table table-responsive-xl table-responsive-md table-responsive-lg table-responsive-sm table-responsive-xxl mt-3">
@@ -327,13 +326,16 @@ function DailyReport() {
             breakLabel={null}
           />
         )}
-        <div className="text-center mt-3">
-          <button className="btn btn-primary" onClick={handleDownload}>
+        <div className="text-center mt-1">
+          <button
+            className="btn btn-primary download-btn"
+            onClick={handleDownload}
+          >
             Download Report
           </button>
         </div>
 
-        <div className="mt-5 mb-3 d-flex justify-content-center gap-5">
+        {/* <div className="mt-5 mb-3 d-flex justify-content-center gap-5">
           <button className="icon-button" onClick={handlehome}>
             <FontAwesomeIcon icon={faHome} size="lg" />
             <span className="ms-1">Home</span>
@@ -346,7 +348,7 @@ function DailyReport() {
             <FontAwesomeIcon icon={faPowerOff} size="lg" />
             <span className="ms-1">Sign Out</span>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

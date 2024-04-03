@@ -21,7 +21,7 @@
 }
 
 .report-container {
-  padding: 20px;
+  padding: 50px;
   border-radius: 10px;
 }
 
@@ -76,7 +76,7 @@
   width: 100%;
 }
 
-.fa-search,
+/* .fa-search,
 .fa-bell,
 .fa-user-circle,
 .report-icon,
@@ -103,7 +103,8 @@
 .fixed-bottom .fa-backward:hover,
 .fixed-bottom .fa-power-off:hover {
   background-color: rgba(0, 0, 0, 0.1);
-}
+  cursor: pointer;
+} */
 
 .notification-popup {
   position: absolute;

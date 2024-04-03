@@ -58,6 +58,7 @@ function Camera() {
             alt="Image 1"
             className="image"
           />
+          <div className="camera-name">Cam 1</div>
         </div>
         <div className="image-container">
           <img
@@ -65,6 +66,7 @@ function Camera() {
             alt="Image 2"
             className="image"
           />
+          <div className="camera-name">Cam 2</div>
         </div>
         <div className="image-container">
           <img
@@ -72,6 +74,7 @@ function Camera() {
             alt="Image 3"
             className="image"
           />
+          <div className="camera-name">Cam 3</div>
         </div>
         <div className="image-container">
           <img
@@ -79,8 +82,8 @@ function Camera() {
             alt="Image 4"
             className="image"
           />
+          <div className="camera-name">Cam 4</div>
         </div>
-        {/* Add more image containers as needed */}
       </div>
 
       <div className="mt-4 mb-3 d-flex justify-content-center gap-5">

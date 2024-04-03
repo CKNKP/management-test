@@ -18,7 +18,6 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      {/* <div className="background-image"></div> */}
       <div className="login-container">
         <div className="login-content">
           <h1 className="login-title" style={{ backgroundColor: "white" }}>
@@ -41,6 +40,7 @@ const Login = () => {
                 value={userId}
                 onChange={(e) => setUserId(e.target.value)}
                 className="form-control login-input"
+                required
               />
             </div>
             <div className="form-group">
@@ -50,6 +50,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="form-control login-input"
+                required
               />
             </div>
             <button type="submit" className="btn btn-primary login-btn">
