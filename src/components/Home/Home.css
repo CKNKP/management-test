@@ -44,12 +44,12 @@
   height: 40px;
   cursor: pointer;
   padding: 10px;
-  border-radius: 50px;
+  border-radius: 10px;
   transition: background-color 0.3s ease;
   text-decoration: none;
 }
 .sidebar-item:hover {
-  transform: scale(1.1); /* Increase the size of the element */
+  transform: scale(1.05); /* Increase the size of the element */
   transition: transform 0.3s ease; /* Add a smooth transition effect */
 }
 
