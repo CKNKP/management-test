@@ -86,7 +86,7 @@ function Camera() {
         </div>
       </div>
 
-      <div className="mt-4 mb-3 d-flex justify-content-center gap-5">
+      {/* <div className="mt-4 mb-3 d-flex justify-content-center gap-5">
         <button className="report-button" onClick={handleHome}>
           <FontAwesomeIcon icon={faHome} size="lg" />
           <span className="ms-1">Home</span>
@@ -99,7 +99,7 @@ function Camera() {
           <FontAwesomeIcon icon={faPowerOff} size="lg" />
           <span className="ms-1">Sign Out</span>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

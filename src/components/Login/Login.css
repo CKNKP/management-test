@@ -10,6 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .login-content {
@@ -20,7 +22,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
+  align-items: center;
 }
 
 .login-title {
@@ -37,7 +39,7 @@
 
 .login-truck-image {
   width: 100%;
-  max-width: 400px;
+  max-width: 275px;
   height: auto;
   margin-bottom: 20px;
 }
