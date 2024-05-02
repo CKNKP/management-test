@@ -301,7 +301,7 @@ function WeeklyReport() {
             />
           </div>
         </div>
-        <div className="dail-report-table table-responsive-xl table-responsive-md table-responsive-lg table-responsive-sm table-responsive-xxl mt-3">
+        <div className="daily-report-table table-responsive-xl table-responsive-md table-responsive-lg table-responsive-sm table-responsive-xxl mt-3">
           <table className="table table-bordered table-striped">
             <thead>
               <tr>

@@ -121,7 +121,7 @@ function Home() {
             <option value="Puri">Puri</option>
           </select>
         </div>
-        <div className="card-group d-flex">
+        <div className="card-group">
           <div className="card p-3 mb-3 home home-chart-1 mt-3">
             <Bar
               className="chart-1"
